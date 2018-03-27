@@ -1,0 +1,79 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  height: 100vh;
+  font-family: "europa", sans-serif;
+}
+
+.main_wrapper{
+  padding: 40px;
+
+  p{
+    line-height: 150%;
+    font-size: 19px;
+    font-family: sans-serif;
+    font-weight: 300;
+    color: rgb(102, 102, 102);
+  }
+}
+
+.page_header{
+  margin: 12.5px 0;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #333333;
+  padding-bottom: 20px;
+  margin: 0 0 30px;
+  border-bottom: 5px solid #333333;
+}
+
+.full-height{
+  height: 100vh;
+}
+
+.my_main_row{
+  padding-top: 70px;
+}
+
+.box{
+  border: 1px dotted;
+}
+
+.side_bar_wrapper{
+  padding: 0px;
+
+  .side_bar_container{
+    margin: 27px;
+  }
+}
+
+#image_place{
+  margin:auto;
+  height: 150px;
+  width: 150px;
+  border: 1px dotted;
+  background-image: url('/assets/me.jpeg');
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+}
+.intro{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  color: #aaaaaa;
+}
+
+.active{
+  background: #337ab7 !important;;
+  color: white;
+}
+
+.nav-pills > li > a:hover{
+  background: #86bae6 !important;
+  opacity: 0.5;
+
+}
