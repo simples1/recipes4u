@@ -18,6 +18,7 @@ gem 'react-rails'
 gem 'browserify-rails'
 gem 'devise'
 gem 'activeadmin'
+gem 'pg', '~> 0.18'
 
 
 group :development, :test do
