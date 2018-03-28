@@ -6,7 +6,7 @@ var recipeForm = React.createClass({
     return {
       title: "",
       description: "",
-      ingredients: [{name: "ccc"}]
+      ingredients: [{name: ""}, {name: ""}]
     };
   },
 
@@ -34,6 +34,11 @@ var recipeForm = React.createClass({
     this.state.ingredients[index].name = e.target.value
     this.setState({ ingredients: this.state.ingredients });
   },
+  addMoreIngredient(e){
+    e.preventDefault()
+    this.state.ingredients.push({ name: "" })
+    this.setState({ ingredients: this.state.ingredients });
+  },
 
   render: function() {
     var style = {
@@ -48,19 +53,23 @@ var recipeForm = React.createClass({
           <label htmlFor="title">Title</label> <br />
           <input type="text" name="title" style={{width: '100%'}} /> <br />
 
-          <label htmlFor="title">Description</label>
+          <label htmlFor="desc">Description</label>
           <textarea name="description" style={style} defaultValue="Type here.." />
 
+          <label htmlFor="ingredients">Ingredients</label><br />
           {this.state.ingredients.map(function(ingredient, i) {
               return(
-                <input type="text" className="ingredients_inputs" key={i} id={i} value={ingredient.name} onChange={this.onChangeOptionText}  />
+                <div>
+                  <input type="text" className="ingredients_inputs" key={i} id={i} value={ingredient.name} onChange={this.onChangeOptionText} style={{width: '50%'}} /> <br /> <br />
+                 </div>
               )
             }.bind(this))
           }
 
           <br />
           <br />
-          <input type="submit" className="btn btn-success" />
+          <button id="add_more" onClick={this.addMoreIngredient} >Add more ingredients</button>
+          <input type="submit" className="btn btn-success" style={{marginLeft: '90%'}} />
 
         </form>
       </div>
