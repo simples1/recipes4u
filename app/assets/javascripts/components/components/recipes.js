@@ -13,7 +13,7 @@ class Recipe extends Component {
 
               return(
                 <NavLink to={"/recipe/"+recipe.id} key={recipe.id}>
-                  <a href="#" class="list-group-item list-group-item-info" style={{fontSize:'30px'}}>{recipe.title}</a>
+                  <a href="#" class="list-group-item list-group-item-success" style={{fontSize:'30px'}}>{recipe.title}</a>
                   <br />
                 </NavLink>
                 
