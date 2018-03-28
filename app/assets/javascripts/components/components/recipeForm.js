@@ -50,27 +50,28 @@ var recipeForm = React.createClass({
         <h1 className="page_header">New Recipe</h1>
 
         <form id='recipeFormform' onSubmit={this.handleSubmit}  >
-          <label htmlFor="title">Title</label> <br />
-          <input type="text" name="title" style={{width: '100%'}} /> <br />
+          <div class="form-group">
+            <label htmlFor="title">Title</label> <br />
+            <input type="text" name="title" className="form-control" /> <br />
 
-          <label htmlFor="desc">Description</label>
-          <textarea name="description" style={style} defaultValue="Type here.." />
+            <label htmlFor="desc">Description</label>
+            <textarea name="description" style={style} placeHolder="Type here.." className="form-control" />
 
-          <label htmlFor="ingredients">Ingredients</label><br />
-          {this.state.ingredients.map(function(ingredient, i) {
-              return(
-                <div>
-                  <input type="text" className="ingredients_inputs" key={i} id={i} value={ingredient.name} onChange={this.onChangeOptionText} style={{width: '50%'}} /> <br /> <br />
-                 </div>
-              )
-            }.bind(this))
-          }
+            <label htmlFor="ingredients">Ingredients</label><br />
+            {this.state.ingredients.map(function(ingredient, i) {
+                return(
+                  <div>
+                    <span>{i+1}</span><input type="text" className="ingredients_inputs form-control" key={i} id={i} value={ingredient.name} onChange={this.onChangeOptionText} style={{width: '50%'}} /> <br /> <br />
+                   </div>
+                )
+              }.bind(this))
+            }
 
-          <br />
-          <br />
-          <button id="add_more" onClick={this.addMoreIngredient} >Add more ingredients</button>
-          <input type="submit" className="btn btn-success" style={{marginLeft: '90%'}} />
-
+            <br />
+            <br />
+            <button id="add_more" onClick={this.addMoreIngredient} className="btn btn-primary btn-lg" >Add more ingredients</button>
+            <input type="submit" className="btn btn-success btn-lg btn-block" style={{marginTop: '5%'}} />
+          </div>
         </form>
       </div>
     )
