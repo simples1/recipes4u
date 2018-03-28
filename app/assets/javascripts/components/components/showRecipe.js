@@ -11,7 +11,7 @@ var showRecipe = React.createClass({
 
   componentDidMount() {
     var id = this.props.match.params.id ;
-    $.getJSON('/recipes/'+id).done(function(result){
+    $.getJSON('/show/'+id).done(function(result){
       this.setState({ 
         title: result.recipe.title,
         description: result.recipe.description,

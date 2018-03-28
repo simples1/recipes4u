@@ -6,7 +6,7 @@ var recipeForm = React.createClass({
     return {
       title: "",
       description: "",
-      ingredients: [{name: ""}, {name: 'ggs'}]
+      ingredients: [{name: "ccc"}]
     };
   },
 
@@ -19,6 +19,7 @@ var recipeForm = React.createClass({
     } 
 
     form_data['ingredients'] = this.state.ingredients
+
     $.post('/save/recipe', form_data).done(function(result){
       if(result.status == '200'){
         window.location.replace('/');
@@ -27,6 +28,11 @@ var recipeForm = React.createClass({
       }
 
     }.bind(this));
+  },
+  onChangeOptionText(e){
+    var index = $(e.target).attr('id')
+    this.state.ingredients[index].name = e.target.value
+    this.setState({ ingredients: this.state.ingredients });
   },
 
   render: function() {
@@ -47,9 +53,9 @@ var recipeForm = React.createClass({
 
           {this.state.ingredients.map(function(ingredient, i) {
               return(
-                <input type="text" className="ingredients_inputs" key={i} />
+                <input type="text" className="ingredients_inputs" key={i} id={i} value={ingredient.name} onChange={this.onChangeOptionText}  />
               )
-            })
+            }.bind(this))
           }
 
           <br />

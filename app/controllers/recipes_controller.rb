@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   def save
     @recipe = Recipe.new()
     @recipe.title = params[:title]
-    @recipe.title = params[:description]
+    @recipe.description = params[:description]
 
     params[:ingredients].values.each do |ingredient|
       @recipe.ingredients.build(name: ingredient['name'])

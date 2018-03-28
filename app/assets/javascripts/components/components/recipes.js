@@ -12,7 +12,7 @@ class Recipe extends Component {
           {this.props.recipes.map(function(recipe) {
 
               return(
-                <NavLink to={"/show/"+recipe.id} key={recipe.id}><li>{recipe.title}</li></NavLink>
+                <NavLink to={"/recipe/"+recipe.id} key={recipe.id}><li>{recipe.title}</li></NavLink>
                 
               )
             })

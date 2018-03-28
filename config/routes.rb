@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get "/show/:id", to: "recipes#show"
   post "/save/recipe", to: "recipes#save"
 
+  
   get '*path', to: 'recipes#index'
 end
