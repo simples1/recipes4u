@@ -8,16 +8,19 @@ class Recipe extends Component {
       <div>
         <h1 className="page_header">Recipes</h1>
         
-        <ul>
+        <div class="list-group">
           {this.props.recipes.map(function(recipe) {
 
               return(
-                <NavLink to={"/recipe/"+recipe.id} key={recipe.id}><li>{recipe.title}</li></NavLink>
+                <NavLink to={"/recipe/"+recipe.id} key={recipe.id}>
+                  <a href="#" class="list-group-item list-group-item-info" style={{fontSize:'30px'}}>{recipe.title}</a>
+                  <br />
+                </NavLink>
                 
               )
             })
           }
-        </ul>
+        </div>
 
       </div>
     )
@@ -26,3 +29,5 @@ class Recipe extends Component {
 
 
 export default Recipe ;
+
+

@@ -28,18 +28,28 @@ var showRecipe = React.createClass({
       <div>
         <h1 className="page_header">{this.state.title}</h1>
         
-        <h4><u>Description</u></h4>
-         <Markdown source={this.state.description} />
+        <div class="panel panel-success">
+          <div class="panel-heading" style={{height:'400px'}}>
+            <h4><u>Description</u></h4>
+             <Markdown source={this.state.description} />
+          </div>
+          <div class="panel-body">
+            
+            <h4><u>Ingredients</u></h4>
+            <ul>
+              {this.state.ingredients.map(function(ingredients) {
+                  return(
+                    <li>{ingredients}</li>
+                  )
+                })
+              }
+            </ul>
 
-        <h4><u>Ingredients</u></h4>
-        <ul>
-          {this.state.ingredients.map(function(ingredients) {
-              return(
-                <li>{ingredients}</li>
-              )
-            })
-          }
-         </ul>
+          </div>
+        </div>
+
+
+
 
       </div>
     )
