@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'rails', '>=5.1'
-gem 'sqlite3'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '>= 1.3.0'
@@ -19,6 +18,7 @@ gem 'browserify-rails'
 gem 'devise'
 gem 'activeadmin'
 gem 'pg', '~> 0.18'
+gem 'rails_12factor'
 
 
 group :development, :test do
