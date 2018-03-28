@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import Markdown from 'react-remarkable'
+
 
 var showRecipe = React.createClass({
   getInitialState() {
@@ -27,7 +29,7 @@ var showRecipe = React.createClass({
         <h1 className="page_header">{this.state.title}</h1>
         
         <h4><u>Description</u></h4>
-        <p>{this.state.description}</p>
+         <Markdown source={this.state.description} />
 
         <h4><u>Ingredients</u></h4>
         <ul>
